@@ -25,7 +25,7 @@ try:
     "FFMPEG",
     default=('ffmpeg -map 0:v:0 -map 0:a:? -map 0:s:? -map -0:t -c:v libx264 -vf "[0:v]drawtext=fontfile=font.ttf:text=\'ANIMESPECTRUM\':fontsize=15:fontcolor=white:bordercolor=black:borderw=7:x=w-text_w-15:y=15,drawtext=fontfile=font.ttf:text=\'ANIMESPECTRUM\':fontsize=15:fontcolor=black:bordercolor=white:borderw=7:x=w-text_w-15:y=15",scale=846x480,format=yuv420p,smartblur=ls=-0.9:lt=-20 -crf 28 -preset veryfast -x264-params no-info=1 -c:a libfdk_aac -vbr 1 -ac 2 -metadata title="AnimeSpectrum" -metadata:s:v title="AnimeSpectrum" -metadata:s:a title="AnimeSpectrum" -profile:a aac_he_v2 -c:s copy')
 )
-    THUMB = Config("Thumbnail" , default="value")
+    THUMB = config("THUMBNAIL", default="https://telegra.ph/file/059d8942b7c02750c01ab.jpg")
 
 except Exception as e:
     print("Environment vars Missing")
