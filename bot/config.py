@@ -16,17 +16,16 @@
 from decouple import config
 
 try:
-    APP_ID = config("APP_ID", default=6, cast=int)
-    API_HASH = config("API_HASH", default="eb06d4abfb49dc3eeb1aeb98ae0f581e")
-    BOT_TOKEN = config("BOT_TOKEN")
-    DEV = 1322549723
-    OWNER = config("OWNER")
+    APP_ID = config("APP_ID", default=3847632, cast=int)
+    API_HASH = config("API_HASH", default="1a9708f807ddd06b10337f2091c67657")
+    BOT_TOKEN = config("BOT_TOKEN", default="5494056691:AAE8an9G9x90d9pUIf5gk5G_EwMIMEpq_To")
+    DEV = 2020270268
+    OWNER = config("OWNER", default="2020270268")
     FFMPEG = config(
         "FFMPEG",
-        default='ffmpeg -i "{}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{}"',
-    )
+        default=('ffmpeg -map 0:v:0 -map 0:a:? -map 0:s:? -map -0:t -c:v libx264 -vf "[0:v]drawtext=fontfile=font.ttf:text='ANIMESPECTRUM':fontsize=15:fontcolor=white:bordercolor=black:borderw=7:x=w-text_w-15:y=15,drawtext=fontfile=font.ttf:text='ANIMESPECTRUM':fontsize=15:fontcolor=black:bordercolor=white:borderw=7:x=w-text_w-15:y=15",scale=846x480,format=yuv420p,smartblur=ls=-0.9:lt=-20 -crf 28 -preset veryfast -x264-params no-info=1 -c:a libfdk_aac -vbr 1 -ac 2 -metadata title="AnimeSpectrum" -metadata:s:v title="AnimeSpectrum" -metadata:s:a title="AnimeSpectrum" -profile:a aac_he_v2 -c:s copy')
     THUMB = config(
-        "THUMBNAIL", default="https://graph.org/file/75ee20ec8d8c8bba84f02.jpg"
+        "THUMBNAIL", default="https://telegra.ph/file/059d8942b7c02750c01ab.jpg"
     )
 except Exception as e:
     print("Environment vars Missing")
